@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.20.0.final using JasperReports Library version 6.20.0-2bc7ab61c56f459e8176eb05c7705e145cd400ad  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report3" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="505a1865-551c-4095-b756-70c5cc889c28">
+	<property name="com.jaspersoft.studio.data.sql.tables">
+		<![CDATA[IlBST0RVQ1QiIEFTICwxNTQsMTUsNTYwNDkyMTQtODQ3NC00ZTYzLTljZmItZDg2NTRjMWE2YTVh
+OyJTVVBQTElFUiIgQVMgLDE1LDI5LDc1OTkwMzM0LTEwYTAtNDU0NS1hMzQzLTRjZmIxNDMxNmZj
+NDs=]]>
+	</property>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="mob_report"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT "SUPPLIER"."FNAME",
+	"SUPPLIER"."LNAME",
+	"PRODUCT"."NAME"
+FROM "SUPPLIER"
+	INNER JOIN "PRODUCT" ON 
+	 "PRODUCT"."SID" = "SUPPLIER"."SID" 
+GROUP BY "SUPPLIER"."FNAME",
+	"SUPPLIER"."LNAME",
+	"PRODUCT"."NAME"]]>
+	</queryString>
+	<field name="FNAME" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="FNAME"/>
+		<property name="com.jaspersoft.studio.field.label" value="FNAME"/>
+	</field>
+	<field name="LNAME" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="LNAME"/>
+		<property name="com.jaspersoft.studio.field.label" value="LNAME"/>
+	</field>
+	<field name="NAME" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="NAME"/>
+		<property name="com.jaspersoft.studio.field.label" value="NAME"/>
+	</field>
+	<group name="Group1">
+		<groupExpression><![CDATA[$F{FNAME}]]></groupExpression>
+		<groupHeader>
+			<band height="33">
+				<staticText>
+					<reportElement mode="Opaque" x="0" y="0" width="100" height="32" forecolor="#666666" backcolor="#E6E6E6" uuid="56955f6a-a429-4815-942d-c90ac2f6f2ee"/>
+					<textElement>
+						<font size="12"/>
+					</textElement>
+					<text><![CDATA[FNAME]]></text>
+				</staticText>
+				<textField>
+					<reportElement mode="Opaque" x="100" y="0" width="455" height="32" forecolor="#006699" backcolor="#E6E6E6" uuid="d76dd9f1-c74d-4d5e-b29e-f106aad75ed4"/>
+					<textElement>
+						<font size="24" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{FNAME}]]></textFieldExpression>
+				</textField>
+				<line>
+					<reportElement x="-20" y="32" width="595" height="1" forecolor="#666666" uuid="cc540a88-9b59-4453-a311-32cc3f43d3db"/>
+				</line>
+			</band>
+		</groupHeader>
+		<groupFooter>
+			<band/>
+		</groupFooter>
+	</group>
+	<group name="Group2">
+		<groupExpression><![CDATA[$F{LNAME}]]></groupExpression>
+		<groupHeader>
+			<band height="32">
+				<textField>
+					<reportElement x="100" y="0" width="455" height="32" forecolor="#006699" uuid="713e5406-7c3e-4550-b35c-3d87b776ca7d"/>
+					<textElement>
+						<font size="22" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{LNAME}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="0" y="0" width="100" height="20" forecolor="#666666" uuid="3eeacb42-0b9d-46b4-aac5-c04837dc3886"/>
+					<textElement>
+						<font size="12"/>
+					</textElement>
+					<text><![CDATA[LNAME]]></text>
+				</staticText>
+			</band>
+		</groupHeader>
+		<groupFooter>
+			<band/>
+		</groupFooter>
+	</group>
+	<group name="Group3">
+		<groupExpression><![CDATA[$F{NAME}]]></groupExpression>
+		<groupHeader>
+			<band height="32">
+				<textField>
+					<reportElement x="100" y="0" width="455" height="32" forecolor="#006699" uuid="0b183335-9a2b-4412-ade5-c29cabe5e0f4"/>
+					<textElement>
+						<font size="20" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{NAME}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="0" y="0" width="100" height="20" forecolor="#666666" uuid="51c8d8bc-f222-4bf7-a882-1e4840f0501b"/>
+					<textElement>
+						<font size="12"/>
+					</textElement>
+					<text><![CDATA[Product NAME]]></text>
+				</staticText>
+			</band>
+		</groupHeader>
+		<groupFooter>
+			<band/>
+		</groupFooter>
+	</group>
+	<background>
+		<band/>
+	</background>
+	<title>
+		<band height="72">
+			<frame>
+				<reportElement mode="Opaque" x="-20" y="-20" width="595" height="92" backcolor="#006699" uuid="4c56d237-d6df-4047-9030-4fb3d86ab881"/>
+				<staticText>
+					<reportElement x="20" y="20" width="234" height="43" forecolor="#FFFFFF" uuid="35ae0c70-fb7d-45ab-8f57-5413a13229f1"/>
+					<textElement>
+						<font size="34" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Supplier]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="395" y="43" width="180" height="20" forecolor="#FFFFFF" uuid="202983be-43cf-4cfd-a319-273916de2cfc"/>
+					<textElement textAlignment="Right">
+						<font size="14" isBold="false"/>
+					</textElement>
+					<text><![CDATA[Mobelium Company]]></text>
+				</staticText>
+			</frame>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="13"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="21">
+			<line>
+				<reportElement x="-20" y="20" width="595" height="1" forecolor="#666666" uuid="be1713cb-97f0-4223-963a-c271d731e142"/>
+			</line>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="19" width="555" height="1" uuid="cfb9c486-650d-467c-8a08-d07ba79f7ede"/>
+			</line>
+		</band>
+	</detail>
+	<columnFooter>
+		<band/>
+	</columnFooter>
+	<pageFooter>
+		<band height="17">
+			<textField>
+				<reportElement mode="Opaque" x="0" y="4" width="515" height="13" backcolor="#E6E6E6" uuid="2bfe03cb-1563-472d-8a23-abffc0d0fcd1"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement mode="Opaque" x="515" y="4" width="40" height="13" backcolor="#E6E6E6" uuid="ff99316a-702e-4bcb-8233-8edd3097c4be"/>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement x="0" y="4" width="100" height="13" uuid="83f0e185-4256-492c-9039-8d7d3517d72d"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band/>
+	</summary>
+</jasperReport>

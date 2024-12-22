@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.20.0.final using JasperReports Library version 6.20.0-2bc7ab61c56f459e8176eb05c7705e145cd400ad  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="REPORT22" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="ea9fd2d2-b287-4f3c-a4a3-1795d183e0e7">
+	<property name="com.jaspersoft.studio.data.sql.tables">
+		<![CDATA[IlNBTEVTIiBBUyAsMTI5LDU1LDIwOTk4MWFmLTAzOWQtNGI0Zi1hZGI4LTU3MTFmMGQ5ZDFlZjsi
+UFJPRFVDVCIgQVMgLDE1LDE1LDFjMjVlZjYxLWRlMDgtNDg4Yi1hODZkLTA5MTU5NzkyNzRkNTs=]]>
+	</property>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="mob_report"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT "PRODUCT"."NAME",
+	"PRODUCT"."PRICE",
+	"SALES"."DISCOUNT",
+	"SALES"."TOTAL_PRICE"
+FROM "PRODUCT"
+	INNER JOIN "SALES" ON 
+	 "SALES"."PID" = "PRODUCT"."PID" 
+GROUP BY "PRODUCT"."NAME",
+	"PRODUCT"."PRICE",
+	"SALES"."DISCOUNT",
+	"SALES"."TOTAL_PRICE"]]>
+	</queryString>
+	<field name="NAME" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="NAME"/>
+		<property name="com.jaspersoft.studio.field.label" value="NAME"/>
+	</field>
+	<field name="PRICE" class="java.lang.Double">
+		<property name="com.jaspersoft.studio.field.name" value="PRICE"/>
+		<property name="com.jaspersoft.studio.field.label" value="PRICE"/>
+	</field>
+	<field name="DISCOUNT" class="java.lang.Double">
+		<property name="com.jaspersoft.studio.field.name" value="DISCOUNT"/>
+		<property name="com.jaspersoft.studio.field.label" value="DISCOUNT"/>
+	</field>
+	<field name="TOTAL_PRICE" class="java.lang.Double">
+		<property name="com.jaspersoft.studio.field.name" value="TOTAL_PRICE"/>
+		<property name="com.jaspersoft.studio.field.label" value="TOTAL_PRICE"/>
+	</field>
+	<group name="Group1">
+		<groupExpression><![CDATA[$F{NAME}]]></groupExpression>
+		<groupHeader>
+			<band height="33">
+				<staticText>
+					<reportElement mode="Opaque" x="0" y="0" width="100" height="32" forecolor="#666666" backcolor="#E6E6E6" uuid="89c9502a-a25c-4ff5-b3c1-a877c1278596"/>
+					<textElement>
+						<font size="12"/>
+					</textElement>
+					<text><![CDATA[PRODUCT NAME]]></text>
+				</staticText>
+				<textField>
+					<reportElement mode="Opaque" x="120" y="0" width="435" height="32" forecolor="#006699" backcolor="#E6E6E6" uuid="a9cca689-b27d-4205-8258-10b065676b51"/>
+					<textElement>
+						<font size="24" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{NAME}]]></textFieldExpression>
+				</textField>
+				<line>
+					<reportElement x="-20" y="32" width="595" height="1" forecolor="#666666" uuid="9f059941-a36d-42a5-b82c-67fc62a5d92d"/>
+				</line>
+			</band>
+		</groupHeader>
+		<groupFooter>
+			<band/>
+		</groupFooter>
+	</group>
+	<group name="Group2">
+		<groupExpression><![CDATA[$F{PRICE}]]></groupExpression>
+		<groupHeader>
+			<band height="32">
+				<textField>
+					<reportElement x="120" y="0" width="435" height="32" forecolor="#006699" uuid="25e1d93c-d6a5-468e-b075-4e4fdf832288"/>
+					<textElement>
+						<font size="22" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{PRICE}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="0" y="0" width="110" height="20" forecolor="#666666" uuid="24ca5042-b13a-42aa-bc9e-9da8c37b4f2a"/>
+					<textElement>
+						<font size="12"/>
+					</textElement>
+					<text><![CDATA[OREGINAL PRICE]]></text>
+				</staticText>
+			</band>
+		</groupHeader>
+		<groupFooter>
+			<band/>
+		</groupFooter>
+	</group>
+	<group name="Group3">
+		<groupExpression><![CDATA[$F{DISCOUNT}]]></groupExpression>
+		<groupHeader>
+			<band height="32">
+				<textField>
+					<reportElement x="120" y="0" width="435" height="32" forecolor="#006699" uuid="48d560e7-ebbf-44a7-99a2-9308ecab124d"/>
+					<textElement>
+						<font size="20" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{DISCOUNT}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="0" y="0" width="100" height="20" forecolor="#666666" uuid="79b6d4f5-9d44-4d7a-9f58-34a73a61fff4"/>
+					<textElement>
+						<font size="12"/>
+					</textElement>
+					<text><![CDATA[DISCOUNT]]></text>
+				</staticText>
+			</band>
+		</groupHeader>
+		<groupFooter>
+			<band/>
+		</groupFooter>
+	</group>
+	<group name="Group4">
+		<groupExpression><![CDATA[$F{TOTAL_PRICE}]]></groupExpression>
+		<groupHeader>
+			<band height="32">
+				<textField>
+					<reportElement x="120" y="0" width="435" height="32" forecolor="#006699" uuid="02dce2b5-cfc7-4646-86c9-92a3bbbd8834"/>
+					<textElement>
+						<font size="16" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{TOTAL_PRICE}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="0" y="0" width="100" height="20" forecolor="#666666" uuid="c2d2e6c1-8134-4508-a760-58eab74f63fd"/>
+					<textElement>
+						<font size="12"/>
+					</textElement>
+					<text><![CDATA[TOTAL_PRICE]]></text>
+				</staticText>
+			</band>
+		</groupHeader>
+		<groupFooter>
+			<band/>
+		</groupFooter>
+	</group>
+	<background>
+		<band/>
+	</background>
+	<title>
+		<band height="72">
+			<frame>
+				<reportElement mode="Opaque" x="-20" y="-20" width="595" height="92" backcolor="#006699" uuid="f995e173-19b0-450c-8337-8056f055b629"/>
+				<staticText>
+					<reportElement x="20" y="20" width="234" height="43" forecolor="#FFFFFF" uuid="ee85d59f-d4b9-4faa-954a-bbbf14ce94c3"/>
+					<textElement>
+						<font size="34" isBold="true"/>
+					</textElement>
+					<text><![CDATA[MOBELIUM]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="370" y="43" width="180" height="20" forecolor="#FFFFFF" uuid="7039765c-af94-4ded-9003-9af69ce5a2ba"/>
+					<textElement textAlignment="Right">
+						<font size="14" isBold="false"/>
+					</textElement>
+					<text><![CDATA[SALES]]></text>
+				</staticText>
+			</frame>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="13"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="21">
+			<line>
+				<reportElement x="-20" y="20" width="595" height="1" forecolor="#666666" uuid="7260e77b-3833-4088-8b00-a92bba76126b"/>
+			</line>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="19" width="555" height="1" uuid="ab2f98f2-1c8d-4674-9241-2aed75da376a"/>
+			</line>
+		</band>
+	</detail>
+	<columnFooter>
+		<band/>
+	</columnFooter>
+	<pageFooter>
+		<band height="17">
+			<textField>
+				<reportElement mode="Opaque" x="0" y="4" width="515" height="13" backcolor="#E6E6E6" uuid="944c348b-1391-49fb-917b-9fb85d7d1930"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement mode="Opaque" x="515" y="4" width="40" height="13" backcolor="#E6E6E6" uuid="3248235c-f1c4-43ea-8bb2-65371124de07"/>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement x="0" y="4" width="100" height="13" uuid="67117cdb-40b5-4b02-8405-cfd55bc232f9"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band/>
+	</summary>
+</jasperReport>
